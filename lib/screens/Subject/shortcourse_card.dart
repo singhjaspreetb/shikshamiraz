@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../styles/styles.dart';
+import '../../common/styles/styles.dart';
 
 class ShortTopCourseCard extends StatelessWidget {
   final Color background;
