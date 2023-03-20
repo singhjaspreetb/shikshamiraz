@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shikshamiraz/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shikshamiraz/screens/home/widgets/active_course.dart';
 import 'package:shikshamiraz/screens/home/widgets/below_text.dart';
 import 'package:shikshamiraz/screens/home/widgets/course_item.dart';
 import 'package:shikshamiraz/screens/home/widgets/feature_course.dart';
@@ -39,13 +40,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildApp(),
-      body: LeaderBoard(),
-      // body: SingleChildScrollView(
-      //     child: Column(
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   mainAxisSize: MainAxisSize.min,
-      //   children: [BelowText(), SearchInput(), FeatureCourse()],
-      // )),
+      // body: LeaderBoard(),
+      body: SingleChildScrollView(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [BelowText(), SearchInput(), FeatureCourse(), ActiveCourse()],
+      )),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
