@@ -44,6 +44,9 @@ dependencies:
   shared_preferences: ^2.0.17
   syncfusion_flutter_charts: ^20.4.54
   cloud_firestore: ^4.4.5
+  google_fonts: ^4.0.3
+  path_provider: ^2.0.13
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_lints: ^2.0.0
