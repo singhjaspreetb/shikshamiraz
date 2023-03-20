@@ -1,6 +1,7 @@
 import 'package:shikshamiraz/screens/Subject/longcourse_card.dart';
 import 'package:shikshamiraz/screens/Subject/shortbottom_card.dart';
 import 'package:shikshamiraz/screens/Subject/shortcourse_card.dart';
+import 'package:shikshamiraz/screens/Subject/video_page.dart';
 import 'package:shikshamiraz/screens/styles/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -109,43 +110,51 @@ class CategoryPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Column(
-                      children: const [
-                        LongCourseCard(
-                          background: AppColors.pink,
-                          title: 'Music Class',
-                          subtitle: '10 Course',
-                          image: 'assets/images/Music Course.png',
-                        ),
-                        ShortBottomCourseCard(
-                            background: AppColors.purple,
-                            title: 'Animation',
-                            subtitle: '12 Course',
-                            image: 'assets/images/Animation.png'),
-                        ShortTopCourseCard(
-                            background: AppColors.red,
-                            title: 'Writing Class',
-                            subtitle: '20 Course',
-                            image: 'assets/images/Writing Class.png')
-                      ],
+                    InkWell(
+                      child: Column(
+                        children: const [
+                          LongCourseCard(
+                            background: AppColors.pink,
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
+                            image: 'assets/images/Music Course.png',
+                          ),
+                          ShortBottomCourseCard(
+                              background: AppColors.purple,
+                              title: 'Laws of Motion',
+                              subtitle: 'Video and Quiz',
+                              image: 'assets/images/Animation.png'),
+                          ShortTopCourseCard(
+                              background: AppColors.red,
+                              title: 'Laws of Motion',
+                              subtitle: 'Video and Quiz',
+                              image: 'assets/images/Writing Class.png')
+                        ],
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VideoPage()));
+                      },
                     ),
                     Column(
                       children: const [
                         ShortTopCourseCard(
                             background: AppColors.green,
-                            title: '3D Illustration',
-                            subtitle: '110 Course',
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
                             image: 'assets/images/3D Illustration.png'),
                         LongCourseCard(
                             background: AppColors.orange,
-                            title: 'Design Class',
-                            subtitle: '15 Course',
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
                             image: 'assets/images/Design Course.png'),
                         ShortBottomCourseCard(
                             background: AppColors.green,
-                            title: 'Programmers',
-                            subtitle: '20 Course',
-                            image: 'assets/images/Programers.png')
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
+                            image: 'assets/images/Programers.png'),
                       ],
                     )
                   ],
