@@ -2,15 +2,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shikshamiraz/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shikshamiraz/screens/data/data.dart';
+import 'package:shikshamiraz/screens/home/util/bottomnavigation.dart';
 import 'package:shikshamiraz/screens/home/widgets/active_course.dart';
 import 'package:shikshamiraz/screens/home/widgets/below_text.dart';
-import 'package:shikshamiraz/screens/home/widgets/course_item.dart';
 import 'package:shikshamiraz/screens/home/widgets/feature_course.dart';
 import 'package:shikshamiraz/screens/leaderboard/leader_board.dart';
-import '../../model/courses.dart';
+import 'package:shikshamiraz/screens/login_screen.dart';
+import 'package:shikshamiraz/screens/profile/profile.dart';
+import 'package:shikshamiraz/screens/test/test.home.dart';
 import 'widgets/search_input.dart';
 
-import '../login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,7 +24,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
-
+  int index = 0;
+  void _onNavPressed(int index) {
+    setState(() {
+      this.index = index;
+    });
+  }
   @override
   void initState() {
     super.initState();
@@ -31,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         .doc(user!.uid)
         .get()
         .then((value) {
-      this.loggedInUser = UserModel.fromMap(value.data());
+      loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
   }
@@ -40,29 +47,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildApp(),
-      // body: LeaderBoard(),
       body: SingleChildScrollView(
-          child: Column(
+        child: Column(
+          children: [
+            if (index == 0) ...{
+              Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
-        children: [BelowText(), SearchInput(), FeatureCourse(), ActiveCourse()],
-      )),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_chart),
-            label: 'LeaderBoard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
+        children: [const BelowText(), const SearchInput(), FeatureCourse(), const ActiveCourse()],
       ),
+            } else if (index == 1) ...{
+              const LeaderBoard(),
+            } else if (index == 2) ...{
+              const ProfilePage(),
+            }
+          ],
+        ),
+      ),
+            bottomNavigationBar: BottomNaviBar(press: (index) => _onNavPressed(index),),
     );
   }
 
@@ -70,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => LoginScreen()));
+        MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
 
   AppBar _buildApp() {

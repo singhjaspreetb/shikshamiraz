@@ -1,5 +1,3 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 
 class BelowText extends StatelessWidget {
@@ -8,12 +6,12 @@ class BelowText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(left: 25),
+        padding: const EdgeInsets.only(left: 25),
         child: RichText(
-            text: TextSpan(children: [
+            text: const TextSpan(children: [
           TextSpan(
               text: "What Subject do You want\n to learn today ? ",
-              style: const TextStyle(
+              style:  TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30,
                   color: Colors.black))

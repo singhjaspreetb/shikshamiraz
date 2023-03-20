@@ -12,7 +12,7 @@ class CourseItem extends StatelessWidget {
           height: 380,
           width: 197,
           decoration: BoxDecoration(
-              color: Color.fromARGB(0, 250, 233, 233),
+              color: const Color.fromARGB(0, 250, 233, 233),
               borderRadius: BorderRadius.circular(15)),
           child: Column(
             children: [
@@ -77,7 +77,7 @@ class CourseItem extends StatelessWidget {
             right: 30,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  backgroundColor: Colors.blue,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
