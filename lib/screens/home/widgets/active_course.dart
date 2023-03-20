@@ -9,7 +9,7 @@ class ActiveCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CategoryTitle("Active Courses", "View All courses"),
+        const CategoryTitle("Active Courses", "View All courses"),
         const SizedBox(height: 20),
         Container(
           margin: const EdgeInsets.all(25),

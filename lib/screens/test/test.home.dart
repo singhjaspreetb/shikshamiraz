@@ -37,7 +37,7 @@ class _TestViewState extends State<TestView> {
 
   void _startQuestionTimer() {
     _remainingSeconds = widget.questionTimeLimit * 60;
-    _timer = Timer.periodic(Duration(seconds: 1), (_) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
       setState(() {
         if (_remainingSeconds <= 0) {
           _goToNextQuestion();
@@ -80,17 +80,17 @@ class _TestViewState extends State<TestView> {
         children: [
           Text(
             currentQuestion,
-            style: TextStyle(fontSize: 24.0),
+            style: const TextStyle(fontSize: 24.0),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           Text(
             'Time Remaining: $_remainingSeconds seconds',
-            style: TextStyle(fontSize: 18.0),
+            style: const TextStyle(fontSize: 18.0),
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           ...options.map(
             (option) => Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: ElevatedButton(
                 onPressed: () => _selectAnswer(option),
                 child: Text(option),

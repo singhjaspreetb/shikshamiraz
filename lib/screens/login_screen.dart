@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:shikshamiraz/screens/home/home_screen.dart';
 import 'package:shikshamiraz/screens/registration_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,8 +17,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   // editing controller
-  final TextEditingController emailController = new TextEditingController();
-  final TextEditingController passwordController = new TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   // firebase
   final _auth = FirebaseAuth.instance;
@@ -62,13 +63,14 @@ class _LoginScreenState extends State<LoginScreen> {
         controller: passwordController,
         obscureText: true,
         validator: (value) {
-          RegExp regex = new RegExp(r'^.{6,}$');
+          RegExp regex = RegExp(r'^.{6,}$');
           if (value!.isEmpty) {
             return ("Password is required for login");
           }
           if (!regex.hasMatch(value)) {
             return ("Enter Valid Password(Min. 6 Character)");
           }
+          return null;
         },
         onSaved: (value) {
           passwordController.text = value!;
@@ -195,7 +197,9 @@ class _LoginScreenState extends State<LoginScreen> {
             errorMessage = "An undefined Error happened.";
         }
         Fluttertoast.showToast(msg: errorMessage!);
-        print(error.code);
+        if (kDebugMode) {
+          print(error.code);
+        }
       }
     }
   }
