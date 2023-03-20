@@ -7,6 +7,8 @@ class Course {
     return [
       Course('assets/images/physics.png', 'Physics', 'Total Length'),
       Course('assets/images/chemistry.png', 'Chemistry', 'Total Length'),
+      Course('assets/images/chemistry.png', 'Chemistry', 'Total Length'),
+      Course('assets/images/chemistry.png', 'Chemistry', 'Total Length'),
     ];
   }
 }
