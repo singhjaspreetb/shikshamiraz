@@ -66,7 +66,18 @@ def solve():
             model="gpt-3.5-turbo", messages=messages)
     reply = response.choices[0].message.content
     messages.append({"role": "assistant", "content": reply})
-    return reply
+    pos=0
+    j=0
+    reply2 =""
+    for i in range(0,len(reply)-2):
+        if(reply[i]==reply[i+1]==reply[i+2]=="`"):
+            pos = i+2+1
+            break
+    for i in range(pos, len(reply)-1):
+        reply2 += reply[i]
+        
+
+    return reply2
 
 
 if __name__ == "__main__":
