@@ -4,8 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/screens/home/widgets/below_text.dart';
 import 'package:shikshamiraz/screens/home/widgets/course_item.dart';
+import 'package:shikshamiraz/screens/home/widgets/feature_course.dart';
 import '../../model/courses.dart';
-import 'widgets/category_title.dart';
 import 'widgets/search_input.dart';
 
 import '../login_screen.dart';
@@ -42,14 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
-        children: [
-          BelowText(),
-          SearchInput(),
-          CategoryTitle('Courses Available', 'View All'),
-          CourseItem(
-            Course('assets/images/physics.png', 'Physics', 'Total Length'),
-          ),
-        ],
+        children: [BelowText(), SearchInput(), FeatureCourse()],
       )),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
