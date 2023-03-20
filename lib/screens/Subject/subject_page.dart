@@ -1,3 +1,7 @@
+import 'package:shikshamiraz/screens/Subject/longcourse_card.dart';
+import 'package:shikshamiraz/screens/Subject/shortbottom_card.dart';
+import 'package:shikshamiraz/screens/Subject/shortcourse_card.dart';
+import 'package:shikshamiraz/screens/Subject/video_page.dart';
 import 'package:shikshamiraz/screens/styles/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +42,7 @@ class CategoryPage extends StatelessWidget {
               decoration: const BoxDecoration(
                   color: AppColors.purple,
                   image: DecorationImage(
-                      image: AssetImage('assets/BG-Gradient.png'),
+                      image: AssetImage('assets/images/BG-Gradient.png'),
                       alignment: Alignment.bottomCenter,
                       fit: BoxFit.cover)),
               child: SafeArea(
@@ -106,42 +110,51 @@ class CategoryPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Column(
-                      children: const [
-                        LongCourseCard(
+                    InkWell(
+                      child: Column(
+                        children: const [
+                          LongCourseCard(
                             background: AppColors.pink,
-                            title: 'Music Class',
-                            subtitle: '10 Course',
-                            image: 'assets/images/Music Course.jpg'),
-                        ShortBottomCourseCard(
-                            background: AppColors.purple,
-                            title: 'Animation',
-                            subtitle: '12 Course',
-                            image: 'assets/images/Animation.png'),
-                        ShortTopCourseCard(
-                            background: AppColors.red,
-                            title: 'Writing Class',
-                            subtitle: '20 Course',
-                            image: 'assets/images/Writing Class.png')
-                      ],
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
+                            image: 'assets/images/Music Course.png',
+                          ),
+                          ShortBottomCourseCard(
+                              background: AppColors.purple,
+                              title: 'Laws of Motion',
+                              subtitle: 'Video and Quiz',
+                              image: 'assets/images/Animation.png'),
+                          ShortTopCourseCard(
+                              background: AppColors.red,
+                              title: 'Laws of Motion',
+                              subtitle: 'Video and Quiz',
+                              image: 'assets/images/Writing Class.png')
+                        ],
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => VideoPage()));
+                      },
                     ),
                     Column(
                       children: const [
                         ShortTopCourseCard(
                             background: AppColors.green,
-                            title: '3D Illustration',
-                            subtitle: '110 Course',
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
                             image: 'assets/images/3D Illustration.png'),
                         LongCourseCard(
                             background: AppColors.orange,
-                            title: 'Design Class',
-                            subtitle: '15 Course',
-                            image: 'assets/images/Design Course.jpg'),
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
+                            image: 'assets/images/Design Course.png'),
                         ShortBottomCourseCard(
                             background: AppColors.green,
-                            title: 'Programmers',
-                            subtitle: '20 Course',
-                            image: 'assets/images/Programers.jpg')
+                            title: 'Laws of Motion',
+                            subtitle: 'Video and Quiz',
+                            image: 'assets/images/Programers.png'),
                       ],
                     )
                   ],
@@ -150,124 +163,6 @@ class CategoryPage extends StatelessWidget {
             ]),
           ),
         ),
-      ]),
-    );
-  }
-}
-
-class LongCourseCard extends StatelessWidget {
-  final Color background;
-  final String title;
-  final String subtitle;
-  final String image;
-  const LongCourseCard(
-      {Key? key,
-      required this.background,
-      required this.title,
-      required this.subtitle,
-      required this.image})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 14),
-      width: 155,
-      height: 192,
-      decoration: BoxDecoration(
-          color: background,
-          borderRadius: BorderRadius.circular(34),
-          border: Border.all(color: Colors.white, width: 10),
-          boxShadow: [
-            BoxShadow(
-                blurRadius: 50,
-                color: const Color(0xFF0B0C2A).withOpacity(.09),
-                offset: const Offset(10, 10))
-          ]),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        const SizedBox(height: 16),
-        Text(title, style: AppStyle.m12w),
-        Text(subtitle, style: AppStyle.r10wt),
-        Expanded(child: Image.asset(image)),
-      ]),
-    );
-  }
-}
-
-class ShortTopCourseCard extends StatelessWidget {
-  final Color background;
-  final String title;
-  final String subtitle;
-  final String image;
-  const ShortTopCourseCard(
-      {Key? key,
-      required this.background,
-      required this.title,
-      required this.subtitle,
-      required this.image})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 14),
-      width: 155,
-      height: 163,
-      decoration: BoxDecoration(
-          color: background,
-          borderRadius: BorderRadius.circular(34),
-          border: Border.all(color: Colors.white, width: 10),
-          boxShadow: [
-            BoxShadow(
-                blurRadius: 50,
-                color: const Color(0xFF0B0C2A).withOpacity(.09),
-                offset: const Offset(10, 10))
-          ]),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        const SizedBox(height: 16),
-        Text(title, style: AppStyle.m12w),
-        Text(subtitle, style: AppStyle.r10wt),
-        Expanded(child: Image.asset(image)),
-      ]),
-    );
-  }
-}
-
-class ShortBottomCourseCard extends StatelessWidget {
-  final Color background;
-  final String title;
-  final String subtitle;
-  final String image;
-  const ShortBottomCourseCard(
-      {Key? key,
-      required this.background,
-      required this.title,
-      required this.subtitle,
-      required this.image})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 14),
-      width: 155,
-      height: 163,
-      decoration: BoxDecoration(
-          color: background,
-          borderRadius: BorderRadius.circular(34),
-          border: Border.all(color: Colors.white, width: 10),
-          boxShadow: [
-            BoxShadow(
-                blurRadius: 50,
-                color: const Color(0xFF0B0C2A).withOpacity(.09),
-                offset: const Offset(10, 10))
-          ]),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        const SizedBox(height: 8),
-        Expanded(child: Image.asset(image)),
-        Text(title, style: AppStyle.m12w),
-        Text(subtitle, style: AppStyle.r10wt),
-        const SizedBox(height: 12),
       ]),
     );
   }

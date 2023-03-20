@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-class TestView extends StatefulWidget {
+class TestHome extends StatefulWidget {
   final Map<String, Map<String, dynamic>> questions;
   final int questionTimeLimit;
   final void Function(int) onQuizCompleted;
 
-  const TestView({
+  const TestHome({
     Key? key,
     required this.questions,
     this.questionTimeLimit = 1, // in minutes
@@ -15,10 +15,10 @@ class TestView extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _TestViewState createState() => _TestViewState();
+  _TestHomeState createState() => _TestHomeState();
 }
 
-class _TestViewState extends State<TestView> {
+class _TestHomeState extends State<TestHome> {
   int _currentQuestionIndex = 1;
   Timer? _timer;
   int _remainingSeconds = 0;
@@ -68,8 +68,14 @@ class _TestViewState extends State<TestView> {
 
   @override
   Widget build(BuildContext context) {
-    String currentQuestion = widget.questions[_currentQuestionIndex.toString()]!['question'] as String;
-    List<String> options = (widget.questions[_currentQuestionIndex.toString()]!['options'] as Map<String, dynamic>).values.cast<String>().toList();
+    String currentQuestion = widget
+        .questions[_currentQuestionIndex.toString()]!['question'] as String;
+    List<String> options =
+        (widget.questions[_currentQuestionIndex.toString()]!['options']
+                as Map<String, dynamic>)
+            .values
+            .cast<String>()
+            .toList();
 
     return Scaffold(
       appBar: AppBar(
