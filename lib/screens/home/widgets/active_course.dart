@@ -28,14 +28,14 @@ class ActiveCourse extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  'Laws of Motioniiiiii',
+                  'Laws of Motion',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
-                Text("2 more lessons left",
+                Text("2 lessons left",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,

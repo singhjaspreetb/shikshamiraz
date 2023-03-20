@@ -72,10 +72,10 @@ class _ChatScreenState extends State<ChatScreen> {
     //   Vx.log(response!.data!.last!.url!);
     //   insertNewData(response.data!.last!.url!, isImage: true);
     // } else {
-
+      print('------------------------------------------------------------------------');
     final request = CompleteText(
         prompt: promt.toString(), maxTokens: 2000, model: kTranslateModelV3);
-
+      print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
     final response = await chatGPT!.onCompleteText(request: request);
     if (kDebugMode) {
       print(response);

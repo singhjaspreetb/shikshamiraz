@@ -12,9 +12,8 @@ import 'package:shikshamiraz/screens/test/test.home.dart';
 // }
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp(
+  WidgetsFlutterBinding.ensureInitialized();await Firebase.initializeApp(
+    name: 'shikshamiraz',
       options: const FirebaseOptions(
           apiKey: "AIzaSyDZYZfRclKOZTUKGM1kstIOTnYl-1Pvli8",
           appId: "1:637209427083:web:26124fac5a01dea2e8688e",

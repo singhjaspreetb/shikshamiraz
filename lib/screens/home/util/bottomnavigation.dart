@@ -131,7 +131,7 @@ class BottomNav extends State<BottomNaviBar> {
   List<String> listOfStrings = [
     'Home',
     'Chat',
-    'LeaderBoard',
+    'Leader..',
     'Profile',
   ];
 }

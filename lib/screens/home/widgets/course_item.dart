@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/model/courses.dart';
+import 'package:shikshamiraz/screens/Subject/subject_page.dart';
 
-import '../../Subject/subject_page.dart';
 
 class CourseItem extends StatelessWidget {
   final Course courses;
@@ -47,11 +47,11 @@ class CourseItem extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(courses.length,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Colors.black)),
+                      // Text(courses.length,
+                      //     style: const TextStyle(
+                      //         fontWeight: FontWeight.bold,
+                      //         fontSize: 16,
+                      //         color: Colors.black)),
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         width: 5,
@@ -59,9 +59,9 @@ class CourseItem extends StatelessWidget {
                         decoration: const BoxDecoration(
                             color: Colors.amber, shape: BoxShape.circle),
                       ),
-                      const Text(
-                        '2 h 32 minutes',
-                        style: TextStyle(
+                      Text(
+                        courses.length,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
                           color: Colors.black,
