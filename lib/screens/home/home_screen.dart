@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shikshamiraz/screens/home/widgets/below_text.dart';
 import 'package:shikshamiraz/screens/home/widgets/course_item.dart';
 import 'package:shikshamiraz/screens/home/widgets/feature_course.dart';
+import 'package:shikshamiraz/screens/leaderboard/leader_board.dart';
 import '../../model/courses.dart';
 import 'widgets/search_input.dart';
 
@@ -38,12 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildApp(),
-      body: SingleChildScrollView(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [BelowText(), SearchInput(), FeatureCourse()],
-      )),
+      body: LeaderBoard(),
+      // body: SingleChildScrollView(
+      //     child: Column(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   mainAxisSize: MainAxisSize.min,
+      //   children: [BelowText(), SearchInput(), FeatureCourse()],
+      // )),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
