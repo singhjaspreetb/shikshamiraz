@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shikshamiraz/model/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shikshamiraz/screens/data/data.dart';
+import 'package:shikshamiraz/screens/chat/chat_screen.dart';
 import 'package:shikshamiraz/screens/home/util/bottomnavigation.dart';
 import 'package:shikshamiraz/screens/home/widgets/active_course.dart';
 import 'package:shikshamiraz/screens/home/widgets/below_text.dart';
@@ -12,7 +12,6 @@ import 'package:shikshamiraz/screens/login_screen.dart';
 import 'package:shikshamiraz/screens/profile/profile.dart';
 import 'package:shikshamiraz/screens/test/test.home.dart';
 import 'widgets/search_input.dart';
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -51,14 +50,17 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             if (index == 0) ...{
+              // TestView(questions: {}, onQuizCompleted: (int ) {  },)
               Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [const BelowText(), const SearchInput(), FeatureCourse(), const ActiveCourse()],
       ),
             } else if (index == 1) ...{
-              const LeaderBoard(),
+              const ChatScreen(),
             } else if (index == 2) ...{
+              const LeaderBoard(),
+            }else if (index == 3) ...{
               const ProfilePage(),
             }
           ],
@@ -77,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar _buildApp() {
     return AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.white24,
         elevation: 0,
         title: Padding(
             padding: const EdgeInsets.only(left: 10),

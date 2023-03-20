@@ -28,7 +28,7 @@ class BottomNav extends State<BottomNaviBar> {
         borderRadius: BorderRadius.circular(50),
       ),
       child: ListView.builder(
-        itemCount: 3,
+        itemCount: 4,
         scrollDirection: Axis.horizontal,
         padding: EdgeInsets.symmetric(horizontal: displayWidth * .02),
         itemBuilder: (context, index) => InkWell(
@@ -123,12 +123,14 @@ class BottomNav extends State<BottomNaviBar> {
 
   List<IconData> listOfIcons = [
     Icons.home_rounded,
+    Icons.chat,
     Icons.add_chart,
     Icons.person_rounded,
   ];
 
   List<String> listOfStrings = [
     'Home',
+    'Chat',
     'LeaderBoard',
     'Profile',
   ];
