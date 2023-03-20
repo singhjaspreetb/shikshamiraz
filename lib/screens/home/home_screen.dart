@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/screens/home/widgets/below_text.dart';
 import 'package:shikshamiraz/screens/home/widgets/course_item.dart';
+import 'package:shikshamiraz/screens/test/test.home.dart';
 import '../../model/courses.dart';
 import 'widgets/category_title.dart';
 import 'widgets/search_input.dart';
@@ -38,19 +39,56 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildApp(),
-      body: SingleChildScrollView(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          BelowText(),
-          SearchInput(),
-          CategoryTitle('Courses Available', 'View All'),
-          CourseItem(
-            Course('assets/images/physics.png', 'Physics', 'Total Length'),
-          ),
-        ],
-      )),
+      body: TestView(
+        onQuizCompleted: (int) {
+        },
+        questions: {
+            "1": {
+              "question":
+                  "What is the equation for the force of gravity between two objects?",
+              "options": {
+                "A": "F = ma",
+                "B": "F = G(m1m2)/d^2",
+                "C": "E = mc^2",
+                "D": "P = F/A"
+              },
+              "answer": "B"
+            },
+            "2": {
+              "question": "What is the formula for kinetic energy?",
+              "options": {
+                "A": "E = mc^2",
+                "B": "F = ma",
+                "C": "P = F/A",
+                "D": "K = 1/2mv^2"
+              },
+              "answer": "D"
+            },
+            "3": {
+              "question": "What is the speed of light?",
+              "options": {
+                "A": "299,792,458 m/s",
+                "B": "186,000 mi/s",
+                "C": "3.0 x 10^8 km/h",
+                "D": "All of the above"
+              },
+              "answer": "A"
+            }
+        },
+      ),
+      // body: SingleChildScrollView(
+      //     child: Column(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   mainAxisSize: MainAxisSize.min,
+      //   children: [
+      //     BelowText(),
+      //     SearchInput(),
+      //     CategoryTitle('Courses Available', 'View All'),
+      //     CourseItem(
+      //       Course('assets/images/physics.png', 'Physics', 'Total Length'),
+      //     ),
+      //   ],
+      // )),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
