@@ -1,3 +1,4 @@
+import 'package:shikshamiraz/screens/Subject/subject_page.dart';
 import 'package:shikshamiraz/screens/home/home_screen.dart';
 import 'package:shikshamiraz/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -73,7 +74,7 @@ class MyApp extends StatelessWidget {
       //     }
       //   },
       // ),
-      home: const HomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }

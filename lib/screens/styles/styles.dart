@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppStyle {
   static TextStyle m12b = const TextStyle(
-    fontSize: 12,
+    fontSize: 16,
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );

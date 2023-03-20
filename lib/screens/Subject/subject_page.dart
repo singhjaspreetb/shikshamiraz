@@ -32,9 +32,15 @@ class CategoryPage extends StatelessWidget {
           alignment: Alignment.topCenter,
           child: Container(
               padding: const EdgeInsets.only(left: 24),
-              height: size.height / 4,
+              height: size.height / 4.5,
               width: size.width,
-              color: Colors.green,
+              // color: Colors.green,
+              decoration: const BoxDecoration(
+                  color: AppColors.purple,
+                  image: DecorationImage(
+                      image: AssetImage('assets/BG-Gradient.png'),
+                      alignment: Alignment.bottomCenter,
+                      fit: BoxFit.cover)),
               child: SafeArea(
                 child: Align(
                     alignment: Alignment.topCenter,
@@ -43,11 +49,11 @@ class CategoryPage extends StatelessWidget {
                       children: [
                         // Row(
                         //   children: [
-                        //     Image.asset('assets/images/Back Icon.png'),
+                        //     Image.asset('assets/images/BackIcon.png'),
                         //     const SizedBox(
                         //       width: 12,
                         //     ),
-                        //     Text('Category', style: AppStyle.m12w)
+                        //     // Text('Category', style: AppStyle.m12w)
                         //   ],
                         // ),
                         const SizedBox(
@@ -72,7 +78,7 @@ class CategoryPage extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-            height: size.height - (size.height / 5),
+            height: size.height - (size.height / 4),
             width: size.width,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(34)),
@@ -98,7 +104,7 @@ class CategoryPage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 7.0, vertical: 21.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
                       children: const [
@@ -106,7 +112,7 @@ class CategoryPage extends StatelessWidget {
                             background: AppColors.pink,
                             title: 'Music Class',
                             subtitle: '10 Course',
-                            image: 'assets/images/Music Course.png'),
+                            image: 'assets/images/Music Course.jpg'),
                         ShortBottomCourseCard(
                             background: AppColors.purple,
                             title: 'Animation',
@@ -130,12 +136,12 @@ class CategoryPage extends StatelessWidget {
                             background: AppColors.orange,
                             title: 'Design Class',
                             subtitle: '15 Course',
-                            image: 'assets/images/Design Course.png'),
+                            image: 'assets/images/Design Course.jpg'),
                         ShortBottomCourseCard(
                             background: AppColors.green,
                             title: 'Programmers',
                             subtitle: '20 Course',
-                            image: 'assets/images/Programers.png')
+                            image: 'assets/images/Programers.jpg')
                       ],
                     )
                   ],
