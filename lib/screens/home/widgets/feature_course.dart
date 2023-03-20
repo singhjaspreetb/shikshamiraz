@@ -19,7 +19,7 @@ class FeatureCourse extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: courseList.length,
                 itemBuilder: (content, index) => CourseItem(courseList[index]),
-                separatorBuilder: (context, index) => SizedBox(
+                separatorBuilder: (context, int index) => SizedBox(
                       width: 15,
                     )))
       ],
