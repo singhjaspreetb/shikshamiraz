@@ -45,11 +45,10 @@ class _ProfilePageState extends State<ProfilePage> {
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: NetworkImage(
+                  image: NetworkImage(
                     "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1331&q=80",
-                    ),
-                    fit: BoxFit.cover
-              ),
+                  ),
+                  fit: BoxFit.cover),
               // borderRadius: BorderRadius.circular(100),
               // border: Border.all(width: 5, color: Colors.white),
               color: Colors.white,
@@ -116,13 +115,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 // ),
                                 ListTile(
                                   leading: Icon(Icons.email),
-                                  title: Text("Email"),
+                                  title: Text("Email Id"),
                                   subtitle: Text("${loggedInUser.email}"),
                                 ),
                                 const ListTile(
-                                  leading: Icon(Icons.phone),
-                                  title: Text("Phone"),
-                                  subtitle: Text("+91 6399031883"),
+                                  leading: Icon(Icons.book),
+                                  title: Text("Class"),
+                                  subtitle: Text("11th class"),
                                 ),
                                 // const ListTile(
                                 //   leading: Icon(Icons.person),
@@ -130,9 +129,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 //   subtitle: Text(
                                 //       "This is a about me link and you can khow about me in this section."),
                                 // ),
+                                SizedBox(
+                                  height: 20,
+                                ),
                                 DataAnalysis()
                               ],
-                              
                             ),
                           ],
                         )

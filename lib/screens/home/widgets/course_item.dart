@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/model/courses.dart';
 
+import '../../Subject/subject_page.dart';
+
 class CourseItem extends StatelessWidget {
   final Course courses;
   const CourseItem(this.courses, {super.key});
@@ -82,7 +84,10 @@ class CourseItem extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   )),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => SubjectPage()));
+              },
               child: const Text('Start'),
             ))
       ],
