@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "637209427083",
+    "project_id": "emailauth-beb60",
+    "storage_bucket": "emailauth-beb60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637209427083:android:3aa1a1444b599e6ae8688e",
+        "android_client_info": {
+          "package_name": "com.example.shikshamiraz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637209427083-jbevq8vgok1n2kmhfd3u25imi5dlf9br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPDrAmNMd5bYKVRJbGxZ1sI8WTgDpjepM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637209427083-jbevq8vgok1n2kmhfd3u25imi5dlf9br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
