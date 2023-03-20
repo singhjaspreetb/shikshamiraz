@@ -28,20 +28,6 @@ class _LeaderBoardState extends State<LeaderBoard> {
   }
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Container(
-      decoration: BoxDecoration(
-        
-      ),
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0.0,
-          leading: Icon(Icons.arrow_back_ios, color: Colors.white),
-          actions: [Icon(Icons.grid_view, Color:  Colors.white,),]
-        ),
-      )
-=======
     return Column(
           children: [
 
@@ -167,7 +153,6 @@ class _LeaderBoardState extends State<LeaderBoard> {
               ),
             )
           ],
->>>>>>> 75157a9cb92a8978f29831d13fc5715dcffbec83
     );
   }
 }
