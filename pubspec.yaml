@@ -32,10 +32,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_auth: ^4.3.0
   firebase_core: ^2.8.0
+  path_provider: ^2.0.2
   flutter:
     sdk: flutter
   fluttertoast: ^8.2.1
   hexcolor: ^3.0.1
+  # charts_flutter: ^0.11.0
+  syncfusion_flutter_charts: ^20.4.54
+  json_annotation: ^4.8.0
+  json_serializable: ^6.6.1
+
+
 
 dev_dependencies:
   flutter_lints: ^2.0.0
