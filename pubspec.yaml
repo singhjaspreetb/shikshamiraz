@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: '>=2.19.3 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -33,22 +33,22 @@ dependencies:
     git:
       url: https://github.com/iampawan/Flutter-ChatGPT.git
   cupertino_icons: ^1.0.2
-  cloud_firestore: ^4.4.3
   firebase_auth: ^4.2.9
   firebase_core: ^2.7.0
   firebase_database: ^10.0.14
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.0.2
+  flutter_ecommerce_app: ^1.0.0+1
+  fluttertoast: ^8.2.1
   font_awesome_flutter: ^9.1.0
   google_fonts: ^4.0.3
   hexcolor: ^2.0.4
+  http: ^0.13.5
   otp_text_field: ^1.1.1
-  shared_preferences: ^2.0.17
-  velocity_x: ^3.6.0
-  fluttertoast: ^8.2.1
   path_provider: ^2.0.2
   percent_indicator: ^4.2.3
+  shared_preferences: ^2.0.17
   syncfusion_flutter_charts: ^20.4.54
 
 dev_dependencies:

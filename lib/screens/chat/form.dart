@@ -43,63 +43,63 @@ class _MyFormState extends State<MyForm> {
               courseInterest = value!;
             },
           ),
-          const SizedBox(
-            height: 10.0,
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: "College Time (From - To)",
-              hintText: "Enter your college time (from am - to pm)",
-              border: OutlineInputBorder(),
-            ),
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter your college time";
-              }
-              return null;
-            },
-            onSaved: (value) {
-              collegeTime = value!;
-            },
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: "Number of Hours want to Sleep",
-              hintText: "Enter the number of hours you want to sleep",
-              border: OutlineInputBorder(),
-            ),
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter the number of hours you want to sleep";
-              }
-              return null;
-            },
-            onSaved: (value) {
-              numberOfHoursOfSleep = value!;
-            },
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: "Number of Days / Weak wants to Learn",
-              hintText: "Enter the number of days you want to learn",
-              border: OutlineInputBorder(),
-            ),
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter the number of days you want to learn";
-              }
-              return null;
-            },
-            onSaved: (value) {
-              numberOfDaysToLearn = value!;
-            },
-          ),
+          // const SizedBox(
+          //   height: 10.0,
+          // ),
+          // TextFormField(
+          //   decoration: const InputDecoration(
+          //     labelText: "College Time (From - To)",
+          //     hintText: "Enter your college time (from am - to pm)",
+          //     border: OutlineInputBorder(),
+          //   ),
+          //   validator: (value) {
+          //     if (value!.isEmpty) {
+          //       return "Please enter your college time";
+          //     }
+          //     return null;
+          //   },
+          //   onSaved: (value) {
+          //     collegeTime = value!;
+          //   },
+          // ),
+          // const SizedBox(
+          //   height: 20.0,
+          // ),
+          // TextFormField(
+          //   decoration: const InputDecoration(
+          //     labelText: "Number of Hours want to Sleep",
+          //     hintText: "Enter the number of hours you want to sleep",
+          //     border: OutlineInputBorder(),
+          //   ),
+          //   validator: (value) {
+          //     if (value!.isEmpty) {
+          //       return "Please enter the number of hours you want to sleep";
+          //     }
+          //     return null;
+          //   },
+          //   onSaved: (value) {
+          //     numberOfHoursOfSleep = value!;
+          //   },
+          // ),
+          // const SizedBox(
+          //   height: 20.0,
+          // ),
+          // TextFormField(
+          //   decoration: const InputDecoration(
+          //     labelText: "Number of Days / Weak wants to Learn",
+          //     hintText: "Enter the number of days you want to learn",
+          //     border: OutlineInputBorder(),
+          //   ),
+          //   validator: (value) {
+          //     if (value!.isEmpty) {
+          //       return "Please enter the number of days you want to learn";
+          //     }
+          //     return null;
+          //   },
+          //   onSaved: (value) {
+          //     numberOfDaysToLearn = value!;
+          //   },
+          // ),
           const SizedBox(
             height: 32.0,
           ),
@@ -120,11 +120,11 @@ class _MyFormState extends State<MyForm> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  String promt =
-                      "hey i want to learn $courseInterest, $numberOfDaysToLearn days i want to study per weak sataurdy and sunday i want to revise, I want to study from after 8pm till 12 pm on daily basics,I want to sleep $numberOfHoursOfSleep hours, write me a time table for $numberOfDaysToLearn days in a week and complete learning timeline with roadmap and also suggest me paid and free learning recourse links for $courseInterest with topics";
+                  // String promt =
+                  //     "hey i want to learn $courseInterest, $numberOfDaysToLearn days i want to study per weak sataurdy and sunday i want to revise, I want to study from after 8pm till 12 pm on daily basics,I want to sleep $numberOfHoursOfSleep hours, write me a time table for $numberOfDaysToLearn days in a week and complete learning timeline with roadmap and also suggest me paid and free learning recourse links for $courseInterest with topics";
 
                   // print(promt);
-                  widget.onSubmitted(promt);
+                  widget.onSubmitted(courseInterest);
                   _formKey.currentState!.save();
                 }
               },

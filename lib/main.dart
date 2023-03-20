@@ -1,9 +1,9 @@
 import 'package:shikshamiraz/screens/Subject/subject_page.dart';
+import 'package:shikshamiraz/screens/Subject/video_page.dart';
 import 'package:shikshamiraz/screens/home/home_screen.dart';
 import 'package:shikshamiraz/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:shikshamiraz/screens/test/test.home.dart';
 
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +14,7 @@ import 'package:shikshamiraz/screens/test/test.home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();await Firebase.initializeApp(
-    name: 'shikshamiraz',
+    // name: 'shikshamiraz',
       options: const FirebaseOptions(
           apiKey: "AIzaSyDZYZfRclKOZTUKGM1kstIOTnYl-1Pvli8",
           appId: "1:637209427083:web:26124fac5a01dea2e8688e",
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
       //     }
       //   },
       // ),
-      home: const LoginScreen(),
+      home: const VideoPage(),
     );
   }
 }

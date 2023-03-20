@@ -1,10 +1,9 @@
 import 'package:flutter/foundation.dart';
-import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/screens/chat/chatmessage.dart';
 import 'package:shikshamiraz/screens/chat/form.dart';
 import 'package:shikshamiraz/screens/chat/threedots.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:http/http.dart' as http;
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -17,10 +16,9 @@ class _ChatScreenState extends State<ChatScreen> {
   final List<ChatMessage> _messages = [
     const ChatMessage(
         text:
-            'Hey, I am Task Master your AI Powered Personalised Learning Co-Pilot\nPlease Fill the Form So, I can Aanalyze  you...',
-        sender: 'Task Master'),
+            'Hey, I am Shiksha   AI your AI Powered Personalised Learning Co-Pilot\n.',
+        sender: 'Shiksha   AI'),
   ];
-  late OpenAI? chatGPT;
 
   bool _isTyping = false;
   String promt = '';
@@ -31,31 +29,20 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  @override
-  void initState() {
-    chatGPT = OpenAI.instance.build(
-        token: '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',
-        baseOption: HttpSetup(receiveTimeout: 5000));
-    super.initState();
-  }
 
   @override
   void dispose() {
-    chatGPT?.close();
     super.dispose();
   }
 
-  // Link for api - https://beta.openai.com/account/api-keys
 
   void _sendMessage() async {
-    // _controller = controller;
-    // if (_controller.text.isEmpty) return;
     if (kDebugMode) {
       print(promt);
     }
     ChatMessage message = const ChatMessage(
       text: 'Genrating Best Possible Routine For You...',
-      sender: "Task Master",
+      sender: "Shiksha   AI",
       isImage: false,
     );
     setState(() {
@@ -63,36 +50,20 @@ class _ChatScreenState extends State<ChatScreen> {
       _isTyping = true;
     });
 
-    // _controller.clear();
-
-    // if (_isImageSearch) {
-    //   final request = GenerateImage(message.text, 1, size: "256x256");
-
-    //   final response = await chatGPT!.generateImage(request);
-    //   Vx.log(response!.data!.last!.url!);
-    //   insertNewData(response.data!.last!.url!, isImage: true);
-    // } else {
-      print('------------------------------------------------------------------------');
-    final request = CompleteText(
-        prompt: promt.toString(), maxTokens: 2000, model: kTranslateModelV3);
-      print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++');
-    final response = await chatGPT!.onCompleteText(request: request);
-    if (kDebugMode) {
+    String pt = promt.toString();
+      var url = Uri.parse('http://127.0.0.1:5000/api/timeline?data='+pt);
+      print(url);
+      var response = await http.get(url);
       print(response);
-    }
-    // final request =
-    //     CompleteText(prompt: message.text, model: kTranslateModelV3);
-
-    // final response = await chatGPT!.onCompleteText(request: request);
-    // Vx.log(response!.choices[0].text);
-    insertNewData(response!.choices[0].text);
+   
+    insertNewData(response.body);
     // }
   }
-
+  
   void insertNewData(String response) {
     ChatMessage botMessage = ChatMessage(
       text: response,
-      sender: "Task Master",
+      sender: "Shiksha   AI",
     );
 
     setState(() {
@@ -105,15 +76,19 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 100,),
         SizedBox(
-            width: 400.0,
-            height: 150.0,
-            child: ListView.builder(
-                itemCount: _messages.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return _messages[index];
-                })),
+          height: 100,
+        ),
+        Center(
+          child: SizedBox(
+              width: 400.0,
+              height: 400.0,
+              child: ListView.builder(
+                  itemCount: _messages.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return _messages[index];
+                  })),
+        ),
         if (_messages.length < 2) ...{
           Padding(
             padding: const EdgeInsets.all(50.0),
