@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/model/user_model.dart';
-import 'package:shikshamiraz/screens/data/data.dart';
+import 'package:shikshamiraz/screens/profile/data/data.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
