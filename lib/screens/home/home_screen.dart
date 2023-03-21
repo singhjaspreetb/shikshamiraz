@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Text(
-              'Hello ${loggedInUser.firstName} ${loggedInUser.secondName}',
+              'Shiksha Miraz',
               style: const TextStyle(fontSize: 20, color: Colors.black),
             )));
   }

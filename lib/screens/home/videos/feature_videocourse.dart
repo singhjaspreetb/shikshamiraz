@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/model/courses.dart';
 import 'package:shikshamiraz/screens/home/widgets/category_title.dart';
-import 'package:shikshamiraz/screens/home/widgets/course_item.dart';
 import 'package:shikshamiraz/screens/home/videos/course_videoitem.dart';
 
+import '../../../model/courses_video.dart';
+import 'category_videotitle.dart';
+
 class FeatureVideoCourse extends StatelessWidget {
-  final courseList = Course.generateCourse();
+  final courseList = Courses.generateCourse();
 
   FeatureVideoCourse({super.key});
 
@@ -13,7 +15,7 @@ class FeatureVideoCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CategoryTitle('Videos Available', 'Watch All'),
+        const CategoryVideoTitle('Videos Available', 'Watch All'),
         SizedBox(
             height: 300,
             child: ListView.separated(

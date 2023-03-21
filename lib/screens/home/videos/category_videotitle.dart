@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CategoryTitle extends StatelessWidget {
+class CategoryVideoTitle extends StatelessWidget {
   final String leftText;
   final String rightText;
-  const CategoryTitle(this.leftText, this.rightText, {super.key});
+  const CategoryVideoTitle(this.leftText, this.rightText, {super.key});
 
   @override
   Widget build(BuildContext context) {

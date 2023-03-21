@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/model/courses.dart';
 
+import '../../../model/courses_video.dart';
 import '../../Subject/subject_page.dart';
 
 class CourseVideoTitle extends StatelessWidget {
-  final Course courses;
+  final Courses courses;
   const CourseVideoTitle(this.courses, {super.key});
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class CourseVideoTitle extends StatelessWidget {
                     ),
                     child: Image.asset(
                       courses.imgPath,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                     ),
                   )),
               const SizedBox(height: 8),

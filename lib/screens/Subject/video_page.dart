@@ -4,17 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/screens/chat/chat_screen.dart';
 import 'package:shikshamiraz/screens/home/util/bottomnavigation.dart';
-import 'package:shikshamiraz/screens/home/widgets/active_course.dart';
 import 'package:shikshamiraz/screens/home/videos/active_videocourse.dart';
-import 'package:shikshamiraz/screens/home/widgets/below_text.dart';
 import 'package:shikshamiraz/screens/home/videos/below_videotext.dart';
-import 'package:shikshamiraz/screens/home/widgets/feature_course.dart';
 import 'package:shikshamiraz/screens/home/videos/feature_videocourse.dart';
 import 'package:shikshamiraz/screens/home/videos/search_videoinput.dart';
 import 'package:shikshamiraz/screens/leaderboard/leader_board.dart';
 import 'package:shikshamiraz/screens/login_screen.dart';
 import 'package:shikshamiraz/screens/profile/profile.dart';
-import '../home/widgets/search_input.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage({Key? key}) : super(key: key);
@@ -93,9 +89,9 @@ class _VideoPage extends State<VideoPage> {
         backgroundColor: Colors.white24,
         elevation: 0,
         title: Padding(
-            padding: const EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 10),
             child: Text(
-              'Hello ${loggedInUser.firstName} ${loggedInUser.secondName}',
+              'Shiksha Miraz',
               style: const TextStyle(fontSize: 20, color: Colors.black),
             )));
   }

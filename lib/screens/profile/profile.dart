@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/model/user_model.dart';
+import 'package:shikshamiraz/screens/login_screen.dart';
 import 'package:shikshamiraz/screens/profile/data/data.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -28,6 +29,12 @@ class _ProfilePageState extends State<ProfilePage> {
       loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
+  }
+
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const LoginScreen()));
   }
 
   @override
@@ -65,16 +72,21 @@ class _ProfilePageState extends State<ProfilePage> {
             height: 20,
           ),
           Text(
-            '${loggedInUser.firstName} ${loggedInUser.secondName}',
+            '${loggedInUser.firstName}${loggedInUser.secondName}',
             style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 20,
           ),
-          const Text(
-            'Student',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
+          ActionChip(
+              // ignore: prefer_const_constructors
+              label: Text("Logout",
+                  style: const TextStyle(
+                    color: Colors.green,
+                  )),
+              onPressed: () {
+                logout(context);
+              }),
           const SizedBox(
             height: 10,
           ),
