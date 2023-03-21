@@ -3,7 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/model/user_model.dart';
 import 'package:shikshamiraz/screens/login_screen.dart';
+import 'package:shikshamiraz/screens/profile/data/chart.dart';
+import 'package:shikshamiraz/screens/profile/data/column.dart';
 import 'package:shikshamiraz/screens/profile/data/data.dart';
+import 'package:shikshamiraz/screens/profile/data/waterfall.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -126,8 +129,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                 //   subtitle: Text("Chandiarh"),
                                 // ),
                                 ListTile(
-                                  leading: Icon(Icons.email),
-                                  title: Text("Email Id"),
+                                  leading: const Icon(Icons.email),
+                                  title: const Text("Email Id"),
                                   subtitle: Text("${loggedInUser.email}"),
                                 ),
                                 const ListTile(
@@ -141,10 +144,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 //   subtitle: Text(
                                 //       "This is a about me link and you can khow about me in this section."),
                                 // ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
-                                DataAnalysis()
+                                const DataAnalysis(),
+                                const ChartData(),
+                                const ColumnData(),
+                                const WaterFallData(),
                               ],
                             ),
                           ],

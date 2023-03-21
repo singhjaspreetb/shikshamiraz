@@ -16,22 +16,22 @@ class _DataAnalysisState extends State<DataAnalysis> {
             primaryXAxis: CategoryAxis(),
             title: ChartTitle(text: 'Performance Analysis'),
             //Chart title
-            legend: Legend(isVisible: true), // Enables the legend.
+            // legend: Legend(isVisible: true), // Enables the legend.
 
             tooltipBehavior:
                 TooltipBehavior(enable: true), // Enables the tooltip.
             margin: const EdgeInsets.only(bottom: 50),
-            series: <LineSeries<SalesData, String>>[
-          LineSeries<SalesData, String>(
+            series: <LineSeries<Intraction, String>>[
+          LineSeries<Intraction, String>(
               dataSource: [
-                SalesData('Jan', 35),
-                SalesData('Feb', 28),
-                SalesData('Mar', 34),
-                SalesData('Apr', 32),
-                SalesData('May', 40)
+                Intraction('Jan', 35),
+                Intraction('Feb', 28),
+                Intraction('Mar', 34),
+                Intraction('Apr', 32),
+                Intraction('May', 40)
               ],
-              xValueMapper: (SalesData sales, _) => sales.year,
-              yValueMapper: (SalesData sales, _) => sales.sales,
+              xValueMapper: (Intraction sales, _) => sales.year,
+              yValueMapper: (Intraction sales, _) => sales.sales,
               dataLabelSettings: const DataLabelSettings(
                   isVisible: true) // Enables the data label.
               )
@@ -39,8 +39,8 @@ class _DataAnalysisState extends State<DataAnalysis> {
   }
 }
 
-class SalesData {
-  SalesData(this.year, this.sales);
+class Intraction {
+  Intraction(this.year, this.sales);
   final String year;
   final double sales;
 }
