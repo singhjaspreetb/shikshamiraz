@@ -48,11 +48,7 @@ class CourseVideoTitle extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text(courses.length,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Colors.black)),
+                    
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 5),
                         width: 5,

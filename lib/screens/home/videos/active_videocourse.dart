@@ -30,7 +30,7 @@ class ActiveVideoCourse extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  'Take a quiz on this topic   ',
+                  'Take a quiz',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -41,54 +41,57 @@ class ActiveVideoCourse extends StatelessWidget {
             ),
             //   ],
             // ),
-            Positioned(
-                bottom: 40,
-                right: 30,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      )),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const TestHome(questions: {
-            "1": {
-              "question":
-                  "What is the equation for the force of gravity between two objects?",
-              "options": {
-                "A": "F = ma",
-                "B": "F = G(m1m2)/d^2",
-                "C": "E = mc^2",
-                "D": "P = F/A"
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Positioned(
+                  bottom: 40,
+                  right: 30,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        )),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const TestHome(questions: {
+              "1": {
+                "question":
+                    "What is the equation for the force of gravity between two objects?",
+                "options": {
+                  "A": "F = ma",
+                  "B": "F = G(m1m2)/d^2",
+                  "C": "E = mc^2",
+                  "D": "P = F/A"
+                },
+                "answer": "B"
               },
-              "answer": "B"
-            },
-            "2": {
-              "question": "What is the formula for kinetic energy?",
-              "options": {
-                "A": "E = mc^2",
-                "B": "F = ma",
-                "C": "P = F/A",
-                "D": "K = 1/2mv^2"
+              "2": {
+                "question": "What is the formula for kinetic energy?",
+                "options": {
+                  "A": "E = mc^2",
+                  "B": "F = ma",
+                  "C": "P = F/A",
+                  "D": "K = 1/2mv^2"
+                },
+                "answer": "D"
               },
-              "answer": "D"
-            },
-            "3": {
-              "question": "What is the speed of light?",
-              "options": {
-                "A": "299,792,458 m/s",
-                "B": "186,000 mi/s",
-                "C": "3.0 x 10^8 km/h",
-                "D": "All of the above"
-              },
-              "answer": "A"
-            }
-          },)));
-                  },
-                  child: const Text('Start'),
-                ))
+              "3": {
+                "question": "What is the speed of light?",
+                "options": {
+                  "A": "299,792,458 m/s",
+                  "B": "186,000 mi/s",
+                  "C": "3.0 x 10^8 km/h",
+                  "D": "All of the above"
+                },
+                "answer": "A"
+              }
+                      },)));
+                    },
+                    child: const Text('Start'),
+                  )),
+            )
           ]),
         ),
       ],

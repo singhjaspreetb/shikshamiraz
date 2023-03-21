@@ -2,6 +2,8 @@ import os
 import openai
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
+import math
+import pickle
 import numpy as np
 app = Flask(__name__)
 cors = CORS(app)
@@ -29,6 +31,19 @@ def solve2():
     messages.append({"role": "assistant", "content": reply})
     return reply
 
+
+@app.route('/api/analysis',methods=['GET'])
+@cross_origin()
+def solve3():
+    data = request.get_json(force=True)
+    assessment_input =data['assessment']
+    time_taken = data['timetaken']
+    #print(assessment_input,30)
+    loaded_model = pickle.load(open("model.pkl", 'rb'))
+    answer = loaded_model.predict(np.array([[assessment_input, time_taken]]))
+    answer = math.ceil(answer)
+    print(f"hello {assessment_input}" )
+    return jsonify({'answer': answer})
 
 @app.route('/api/data', methods=['GET'])
 @cross_origin()

@@ -14,7 +14,7 @@ class _DataAnalysisState extends State<DataAnalysis> {
     return Center(
         child: SfCartesianChart(
             primaryXAxis: CategoryAxis(),
-            title: ChartTitle(text: 'Half yearly sales analysis'),
+            title: ChartTitle(text: 'Performance Analysis'),
             //Chart title
             legend: Legend(isVisible: true), // Enables the legend.
 

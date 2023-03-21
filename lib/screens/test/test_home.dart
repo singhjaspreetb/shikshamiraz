@@ -22,7 +22,7 @@ class _TestHomeState extends State<TestHome> {
   int _currentQuestionIndex = 1;
   Timer? _timer;
   int _remainingSeconds = 0;
-  int _score = 0;
+  int _score = 2;
   List<int> _timeTakenPerQuestion = [];
 
   @override
@@ -99,11 +99,11 @@ class _TestHomeState extends State<TestHome> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Score: $_score',
-              style: const TextStyle(fontSize: 18.0),
-            ),
-            const SizedBox(height: 16.0),
+            // Text(
+            //   'Score: $_score',
+            //   style: const TextStyle(fontSize: 18.0),
+            // ),
+            // const SizedBox(height: 16.0),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Text(
