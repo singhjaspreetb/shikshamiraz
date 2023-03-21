@@ -2,10 +2,10 @@ import 'package:shikshamiraz/screens/Subject/longcourse_card.dart';
 import 'package:shikshamiraz/screens/Subject/shortbottom_card.dart';
 import 'package:shikshamiraz/screens/Subject/shortcourse_card.dart';
 import 'package:shikshamiraz/screens/Subject/video_page.dart';
-import 'package:shikshamiraz/screens/styles/colors.dart';
+import 'package:shikshamiraz/common/styles/colors.dart';
 import 'package:flutter/material.dart';
 
-import 'package:shikshamiraz/screens/styles/styles.dart';
+import 'package:shikshamiraz/common/styles/styles.dart';
 
 class SubjectPage extends StatelessWidget {
   const SubjectPage({Key? key}) : super(key: key);
