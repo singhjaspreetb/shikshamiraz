@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shikshamiraz">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
    <application
         android:label="shikshamiraz"
         android:name="${applicationName}"
@@ -30,7 +32,6 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        
     </application>
 </manifest>
