@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shikshamiraz/model/courses.dart';
+import 'package:shikshamiraz/model/courses_video.dart';
 import 'package:shikshamiraz/screens/home/videos/youtube_player.dart';
 
-import '../../../model/courses_video.dart';
-import '../../Subject/subject_page.dart';
 
 class CourseVideoTitle extends StatelessWidget {
   final Courses courses;

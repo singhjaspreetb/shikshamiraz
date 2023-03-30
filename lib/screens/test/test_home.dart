@@ -1,14 +1,12 @@
-
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:shikshamiraz/screens/test/util/testresult.dart';
 
 class TestHome extends StatefulWidget {
-  final Map<String, Map<String, dynamic>> questions;
+  final  Map<String, Map<String, dynamic>> questions;
   final int questionTimeLimit;
 
-  const TestHome({
+  TestHome({
     Key? key,
     required this.questions,
     this.questionTimeLimit = 1, // in minutes
@@ -27,6 +25,7 @@ class _TestHomeState extends State<TestHome> {
 
   @override
   void initState() {
+    // print(widget.questions);
     super.initState();
     _startQuestionTimer();
   }
@@ -71,7 +70,7 @@ class _TestHomeState extends State<TestHome> {
 
   void _selectAnswer(String selectedAnswer) {
     String correctAnswer =
-        widget.questions[_currentQuestionIndex.toString()]!['answer'] as String;
+        widget.questions[_currentQuestionIndex.toString()]!['Answer'] as String;
     if (selectedAnswer == correctAnswer) {
       _score++;
     }
@@ -83,9 +82,9 @@ class _TestHomeState extends State<TestHome> {
   Widget build(BuildContext context) {
 
     String currentQuestion = widget
-        .questions[_currentQuestionIndex.toString()]!['question'] as String;
+        .questions[_currentQuestionIndex.toString()]!['Question'] as String;
     List<String> options =
-        (widget.questions[_currentQuestionIndex.toString()]!['options']
+        (widget.questions[_currentQuestionIndex.toString()]!['Options']
                 as Map<String, dynamic>)
             .values
             .cast<String>()

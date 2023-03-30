@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:shikshamiraz/common/styles/styles.dart';
 
-import '../../common/styles/styles.dart';
 
 class LongCourseCard extends StatelessWidget {
   final Color background;
